@@ -66,7 +66,7 @@ const todos = (state = initialState, action) => {
       case DELETE_TODO:
         return {
           ...state,
-          todos: [...state.todos].filter((item) => item.id !== action.payload),
+          todos: state.todos.filter((item) => item.id !== action.payload),
         };
 
 

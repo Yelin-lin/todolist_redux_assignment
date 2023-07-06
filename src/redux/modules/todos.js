@@ -58,10 +58,16 @@ const initialState = {
 const todos = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
-      return {
+      const newTodo = {
+        id: Date.now(),
+        title: action.payload.title,
+        body: action.payload.body,
+        isDone: false,
+        };
+        return {
         ...state,
-        todos: [...state.todos, action.payload]
-      };
+        todos: [newTodo, ...state.todos],
+        };
 
       case DELETE_TODO:
         return {

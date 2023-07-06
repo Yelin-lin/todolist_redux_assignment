@@ -9,7 +9,7 @@ const Form = () => {
   const dispatch = useDispatch();
   
   const [todo, setTodo] = useState({
-    id: Date.now(),
+    id: 0,
     title: "",
     body: "",
     isDone: false,
